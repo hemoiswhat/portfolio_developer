@@ -1,13 +1,18 @@
 <script>
+    import {goto} from '$app/navigation';
     export let y;
 
     export let tabs = [
         { name: "Projects ", link: "#projects" },
         { name: "About me", link: "#about" },
-        { name: "Blog", link: "https://www.youtube.com/watch?v=dQw4w9WgXcQ" },
-        // { name: "Contact", link: "" },
-        // {name: '', link: ''},
+       // { name: "Blog", link: "https://www.youtube.com/watch?v=dQw4w9WgXcQ" },
+        { name: "Contact", link: "#contact" },
+        {name: '', link: ''},
     ];
+
+    function whatsapp(){
+    goto("https://wa.me/+60102529031");
+}
 </script>
 
 <header
@@ -17,7 +22,7 @@
             : " py-6 bg-transparent border-transparent")}
 >
     <h1 class="font-medium">
-        <b class="font-bold poppins">Samuel</b> <span class="">Oak</span>
+        <b class="font-bold poppins">Heng Jian</b> <span class="">Yap</span>
     </h1>
     <div class="sm:flex items-center gap-4 hidden">
         {#each tabs as tab, index}
@@ -37,13 +42,13 @@
             />
             <h4 class="relative z-9">Login</h4>
         </button> -->
-        <button
+        <button on:click = {whatsapp}
             class="blueShadow relative overflow-hidden px-5 py-2 group rounded-full bg-white text-slate-950"
         >
             <div
                 class="absolute top-0 right-full w-full h-full bg-violet-400 opacity-20 group-hover:translate-x-full z-0 duration-200"
             />
-            <h4 class="relative z-9">Get in touch</h4>
+            <h4  class="relative z-9">Get in touch</h4>
         </button>
     </div>
 </header>
